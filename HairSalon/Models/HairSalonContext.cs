@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace WeekThreeTemplate.Models
+namespace HairSalon.Models
 {
-  public class WeekThreeTemplateContext : DbContext
+  public class HairSalonContext : DbContext
   {
-    public virtual DbSet<TemplateCategory> TemplateCategories { get; set; }
-    public DbSet<TemplateItem> TemplateItems { get; set; }
+    public virtual DbSet<Stylist> Stylists { get; set; }
+    public DbSet<Client> Clients { get; set; }
 
-    public WeekThreeTemplateContext(DbContextOptions options) : base(options) { }
+    public HairSalonContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
