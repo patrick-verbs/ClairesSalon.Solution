@@ -4,6 +4,7 @@ namespace HairSalon.Models
   {
     public int ClientId { get; set; }
     public string NameFirst { get; set; }
+    public string NameLast { get; set; }
     public string Phone { get; set; }
     public string Email { get; set; }
     public int StylistId { get; set; }
@@ -11,7 +12,7 @@ namespace HairSalon.Models
 
     public string FullName()
     {
-      string fullName = "";
+      string fullName = this.NameFirst + " " + this.NameLast;
 
       return fullName;
     }
