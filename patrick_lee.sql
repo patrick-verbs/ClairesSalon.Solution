@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `Clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `Clients` (
-  `Id` int(11) NOT NULL,
-  `IdStylists` int(11) NOT NULL,
+  `ClientId` int(11) NOT NULL,
+  `StylistId` int(11) NOT NULL,
   `NameFirst` varchar(255) DEFAULT NULL,
   `NameLast` varchar(255) DEFAULT NULL,
   `Phone` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`ClientId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -41,13 +41,13 @@ DROP TABLE IF EXISTS `Stylists`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `Stylists` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `StylistId` int(11) NOT NULL AUTO_INCREMENT,
   `NameFirst` varchar(255) DEFAULT NULL,
   `NameLast` varchar(255) DEFAULT NULL,
   `Specialty` varchar(255) DEFAULT NULL,
   `Phone` varchar(255) DEFAULT NULL,
   `Email` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
+  PRIMARY KEY (`StylistId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +60,4 @@ CREATE TABLE `Stylists` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-21 12:15:06
+-- Dump completed on 2021-05-21 10:45:16
