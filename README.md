@@ -14,11 +14,11 @@ This project was made to demonstrate basic proficiency in working with MySQL dat
 - A text editor like [VS Code](https://code.visualstudio.com/)
 - A command line interface like Terminal or GitBash to set up and run the project
 - MySQL 8.0.19, following [these instructions](https://web.archive.org/web/20210521163651/https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)
-   - MacOS:
-      - [MySQL Community Server 8.0.19](https://dev.mysql.com/downloads/file/?id=484914)
-      - [MySQL Workbench 8.0.19](https://dev.mysql.com/downloads/file/?id=484391)
-   - Windows:
-      - [MySQL Server & Workbench 8.0.19](https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-web-community-8.0.19.0.msi)
+  - MacOS:
+    - [MySQL Community Server 8.0.19](https://dev.mysql.com/downloads/file/?id=484914)
+    - [MySQL Workbench 8.0.19](https://dev.mysql.com/downloads/file/?id=484391)
+  - Windows:
+  - [MySQL Server & Workbench 8.0.19](https://downloads.mysql.com/archives/get/p/25/file/mysql-installer-web-community-8.0.19.0.msi)
 - A web browser to view and interact with the project
 
 ### Installation
@@ -26,31 +26,42 @@ This project was made to demonstrate basic proficiency in working with MySQL dat
 1. Clone the repository: `$ git clone https://github.com/patrick-verbs/ClairesSalon.Solution`
 2. Navigate to the `ClairesSalon.Solution` directory on your computer
 3. Open with your preferred text editor to view the code base
-4. To setup a SQL database using MySQL:
-   - Create an `appsettings.json` file in the `ClairesSalon.Solution/HairSalon` directory
-   - Copy the text box below and paste into the `appsettings.json` file, replacing `<password>` with your MySQL password:
-   ```
-     {
-        "ConnectionStrings": {
-           "DefaultConnection": "Server=localhost;Port=3306;database=patrick_lee;uid=root;pwd=<password>;"
-         }
-     }
-   ```
-   - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) and select the enter key to launch MySQL servers
-   - Type the following commands to setup the database:
-     - `CREATE DATABASE patrick_lee;` to make a new database
-     - `USE patrick_lee;` to connect to the new database
-     - `CREATE TABLE {template_category (TemplateCategory INT, SomeProperty VARCHAR (255))};` to create a `{template_category}` table
-     - `CREATE TABLE {template_item (TemplateItemId INT, TemplateCategoryId Int)};` to create another new `{template_item}` table
+4. To setup the SQL database:
+  - Create an `appsettings.json` file in the `ClairesSalon.Solution/HairSalon` directory
+  - Copy the text box below and paste into the `appsettings.json` file, replacing `<password>` with your MySQL password:
+  ```
+  {
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=patrick_lee;uid=root;pwd=<password>;"
+    }
+  }
+  ```
+  - __Option 1: Recreate the database structure using MySQL terminal commands__
+    - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) and select the enter key to launch MySQL server
+    - Type the following commands to setup the database:
+      1. `CREATE DATABASE patrick_lee;` to make a new database
+      2. `USE patrick_lee;` to connect to the new database
+      3. `CREATE TABLE {template_category (TemplateCategory INT, SomeProperty VARCHAR (255))};` to create a `{template_category}` table
+      4. `CREATE TABLE {template_item (TemplateItemId INT, TemplateCategoryId Int)};` to create another new `{template_item}` table
+  - __Option 2: Import the database structure using MySQL Workbench__
+    - Open MySQL Workbench
+    - On the "Welcome" page, double-click the MySQL instance in the __MySQL Connections__ section. You may be prompted to enter a password; if so, this will be `epicodus` or your custom password, just as in the earlier step
+    - Click on the __Adminstration__ tab
+      1. Click on _Data Import/Restore_
+      2. In the Data Import window that appears, select _Import from Self-Contained File_
+      3. Navigate the file selection to your cloned project location and choose the `.sql` file at `FridayProject.Solution/bender_rodriguez.sql`
+      4. At the __Default Target Schema__ option, choose _New..._ and name the schema `whatever_your_database_schema_is_called`
+      5. Click the _Start Import_ button at the bottom-right; if you can't find it, you may need to maximize your MySQL Workbench window
+
 5. To serve the local web app:
-   - Navigate to `ClairesSalon.Solution/HairSalon}` in your command line
-   - Run the command `dotnet restore` to restore the dependencies that are listed in `HairSalon.csproj`
-   - Run the command `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
-   - Run the command `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
-   - Run the command `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`
-   - Run the command `dotnet build` to build the project and its dependencies into a set of binaries
-   - Finally, run the command `dotnet run` to run the project!
-   - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
+  - Navigate to `ClairesSalon.Solution/HairSalon}` in your command line
+  - Run the command `dotnet restore` to restore the dependencies that are listed in `HairSalon.csproj`
+  - Run the command `dotnet add package Microsoft.EntityFrameworkCore -v 5.0.0`
+  - Run the command `dotnet add package Pomelo.EntityFrameworkCore.MySql -v 5.0.0-alpha.2`
+  - Run the command `dotnet add package Microsoft.EntityFrameworkCore.Proxies -v 5.0.0`
+  - Run the command `dotnet build` to build the project and its dependencies into a set of binaries
+  - Finally, run the command `dotnet run` to run the project!
+  - Note: `dotnet run` also restores and builds the project, so you can use this single command to start the console app
 6. Visit the application via web browser at: `localhost:5000/`
 
 ## Known Bugs
