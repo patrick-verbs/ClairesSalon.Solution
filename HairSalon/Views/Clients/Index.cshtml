@@ -16,7 +16,7 @@ else
   <ol>
   @foreach (Client client in Model)
   {
-    <li>@client.Name</li>
+    <li>@client.NameFirst</li>
     <ul>
       <li>@Html.ActionLink($"Client ID: {client.ClientId}", "Details", new { id = client.ClientId })</li>
     </ul>
