@@ -1,25 +1,61 @@
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
-using WeekThreeTemplate.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace WeekThreeTemplate.Controllers
+namespace HairSalon.Controllers
 {
-  public class TemplateItemsController : Controller
+  public class ClientsController : Controller
   {
-    private readonly WeekThreeTemplateContext _db;
+    private readonly HairSalonContext _db;
 
-    public TemplateItemsController(WeekThreeTemplateContext db)
+    public ClientsController(HairSalonContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<TemplateItem> model = _db.TemplateItems.Include(templateItem => templateItem.TemplateCategory).ToList();
+      List<Client> model = _db.Clients.Include(stylist => stylist.Stylist).ToList();
       return View(model);
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Type");
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Client client)
+    {
+      _db.Clients.Add(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      return View(thisClient);
+    }
+  
+    public ActionResult Edit(int id)
+    {
+      var thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Type");
+      return View(thisClient);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Client client)
+    {
+      _db.Clients.Update(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
+
