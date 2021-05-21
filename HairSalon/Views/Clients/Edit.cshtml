@@ -13,13 +13,16 @@
   @Html.HiddenFor(model => model.ClientId)
 
   @Html.LabelFor(model => model.NameFirst)
-  @Html.EditorFor(model => model.NameFirst)
+  @Html.TextBoxFor(model => model.NameFirst)
+  @Html.LabelFor(model => model.NameLast)
+  @Html.TextBoxFor(model => model.NameLast)
+  <br>
 
   @Html.LabelFor(model => model.Phone)
   @Html.EditorFor(model => model.Phone)
-
   @Html.LabelFor(model => model.Email)
   @Html.EditorFor(model => model.Email)
+  <br>
 
   @Html.LabelFor(model => model.Stylist)
   @Html.DropDownList("StylistId")
