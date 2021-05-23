@@ -11,6 +11,18 @@
   @Html.TextBoxFor(model => model.NameFirst)
   @Html.LabelFor(model => model.NameLast)
   @Html.TextBoxFor(model => model.NameLast)
+  <br>
+
+  @Html.LabelFor(model => model.Specialty)
+  @Html.TextBoxFor(model => model.Specialty)
+  <br>
+
+  @Html.LabelFor(model => model.Phone)
+  @Html.TextBoxFor(model => model.Phone)
+  @Html.LabelFor(model => model.Email)
+  @Html.TextBoxFor(model => model.Email)
+  <br>
+
   <input type="submit" value="Add New Stylist" />
 }
 <p>@Html.ActionLink("Show All Stylists", "Index")</p>

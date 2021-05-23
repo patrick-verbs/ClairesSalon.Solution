@@ -12,6 +12,7 @@ namespace HairSalon.Models
         public int StylistId { get; set; }
         public string NameFirst { get; set; }
         public string NameLast { get; set; }
+        public string Specialty { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         
