@@ -50,7 +50,7 @@ This project was made to demonstrate basic proficiency in working with MySQL dat
       1. Click on _Data Import/Restore_
       2. In the Data Import window that appears, select _Import from Self-Contained File_
       3. Navigate the file selection to your cloned project location and choose the `.sql` file at `ClairesSalon.Solution/patrick_lee.sql`
-      4. At the __Default Target Schema__ option, choose _New..._ and name the schema `hair_salon`
+      4. At the __Default Target Schema__ option, choose _New..._ and name the schema `patrick_lee`
       5. Click the _Start Import_ button at the bottom-right; if you can't find it, you may need to maximize your MySQL Workbench window
 
 5. To serve the local web app:
