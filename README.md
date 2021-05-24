@@ -41,16 +41,16 @@ This project was made to demonstrate basic proficiency in working with MySQL dat
     - Type the following commands to setup the database:
       1. `CREATE DATABASE patrick_lee;` to make a new database
       2. `USE patrick_lee;` to connect to the new database
-      3. `CREATE TABLE {template_category (TemplateCategory INT, SomeProperty VARCHAR (255))};` to create a `{template_category}` table
-      4. `CREATE TABLE {template_item (TemplateItemId INT, TemplateCategoryId Int)};` to create another new `{template_item}` table
+      3. `CREATE TABLE {Stylists (StylistId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, NameFirst VARCHAR(255), NameLast VARCHAR(255), Specialty VARCHAR(255), Phone VARCHAR(255), Email VARCHAR(255))};` to create a `{Stylists}` table
+      4. `CREATE TABLE {Clients (ClientId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, StylistId INT NOT NULL, NameFirst VARCHAR(255), NameLast VARCHAR(255), Phone VARCHAR(255), Email VARCHAR(255))};` to create another new table, `{Clients}`
   - __Option 2: Import the database structure using MySQL Workbench__
     - Open MySQL Workbench
     - On the "Welcome" page, double-click the MySQL instance in the __MySQL Connections__ section. You may be prompted to enter a password; if so, this will be `epicodus` or your custom password, just as in the earlier step
     - Click on the __Adminstration__ tab
       1. Click on _Data Import/Restore_
       2. In the Data Import window that appears, select _Import from Self-Contained File_
-      3. Navigate the file selection to your cloned project location and choose the `.sql` file at `FridayProject.Solution/bender_rodriguez.sql`
-      4. At the __Default Target Schema__ option, choose _New..._ and name the schema `whatever_your_database_schema_is_called`
+      3. Navigate the file selection to your cloned project location and choose the `.sql` file at `ClairesSalon.Solution/patrick_lee.sql`
+      4. At the __Default Target Schema__ option, choose _New..._ and name the schema `hair_salon`
       5. Click the _Start Import_ button at the bottom-right; if you can't find it, you may need to maximize your MySQL Workbench window
 
 5. To serve the local web app:
