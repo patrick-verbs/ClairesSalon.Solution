@@ -39,8 +39,8 @@ This project was made to demonstrate basic proficiency in working with MySQL dat
   - __Option 1: Recreate the database structure using MySQL terminal commands__
     - Open your terminal and run the command: `mysql -uroot -p<mysql_password>` (replace `<mysql_password>` with your MySQL password) and select the enter key to launch MySQL server
     - Type the following commands to setup the database:
-      1. `CREATE DATABASE patrick_lee;` to make a new database
-      2. `USE patrick_lee;` to connect to the new database
+      1. `CREATE DATABASE hair_salon;` to make a new database
+      2. `USE hair_salon;` to connect to the new database
       3. `CREATE TABLE {Stylists (StylistId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, NameFirst VARCHAR(255), NameLast VARCHAR(255), Specialty VARCHAR(255), Phone VARCHAR(255), Email VARCHAR(255))};` to create a `{Stylists}` table
       4. `CREATE TABLE {Clients (ClientId INT NOT NULL AUTO_INCREMENT PRIMARY KEY, StylistId INT NOT NULL, NameFirst VARCHAR(255), NameLast VARCHAR(255), Phone VARCHAR(255), Email VARCHAR(255))};` to create another new table, `{Clients}`
   - __Option 2: Import the database structure using MySQL Workbench__
