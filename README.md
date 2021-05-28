@@ -74,6 +74,7 @@ _None identified_ :bug:
 - MySQL Server 8.0.19 and MySQL Workbench 8.0.19
 - C#
 - [ASP.NET Core MVC framework](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-5.0) for building the web app
+- Entity Framework Core
 - HTML5 with Razor pages
 - CSS3 with Bootstrap 4.5.0 framework
 - .NET 5 SDK with MSTest
